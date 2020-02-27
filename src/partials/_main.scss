@@ -1,0 +1,55 @@
+
+body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+// position header absolute.
+header {
+    position: absolute;
+    top: 40rem;
+    left: -45rem;
+    width: 100vh;
+
+    h1 {
+        transform: rotate(-90deg);
+        text-shadow: 3px 3px 3px $blackColor;
+    }
+}
+
+aside {
+    // grid-area: 1 / 2;
+    background: url(./../assets/boris-misevic-cQltbypBFvg-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 25vw;
+    height: 100vh;
+    box-shadow: 3px 3px 3px $blackColor;
+    padding-top: 5%;
+}
+
+.instructions {
+    width: 100%;
+    
+    .instrContainer {
+        width: 75%;
+        margin: 0 auto;
+        padding: 4%;
+        background: rgba(255, 255, 255, 0.507);;
+        border-radius: 25px;
+
+        h2 {
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+}
+
+

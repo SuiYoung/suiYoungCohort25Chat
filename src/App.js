@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// a couple of functions from the React library
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import components
+import Header from './Components/Header';
+import Main from './Components/Main';
+import Aside from './Components/Aside';
+import Footer from './Components/Footer';
+
+// import firebase
+import firebase from './firebase';
+
+// CSS for the `App` component
+import './App.scss';
+
+class App extends Component{
+  render(){
+      return (
+        <div className="App">
+          <header>
+            <Header />
+          </header>
+
+          <section className="mainGrid">
+            <aside>
+              <Aside />
+            </aside>
+
+            <main>
+              <Main />
+            </main>
+          </section>
+
+          {/* may not need footer */}
+          <Footer /> 
+        </div>
+      );
+  }
 }
 
 export default App;
