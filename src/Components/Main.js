@@ -5,8 +5,8 @@ class Main extends Component{
 render(){
     return (
         <div className="chatDisplay">
-            <MessageDisplay />
-            <MessageInputForm />
+            {/* <MessageDisplay />
+            <MessageInputForm /> */}
         </div>
     );
 }

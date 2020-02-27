@@ -7,6 +7,7 @@ render(){
         <section>
             {/* instructions panel */}
             <div className="instructions">
+                <i class="fas fa-question-circle"></i>
                 <div className="instrContainer">
                     <h2>How To Use:</h2>
                     <ul>

@@ -1,14 +1,4 @@
 
-body {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 20px;
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-    justify-content: center;
-}
 
 // position header absolute.
 header {
@@ -21,6 +11,17 @@ header {
         transform: rotate(-90deg);
         text-shadow: 3px 3px 3px $blackColor;
     }
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 aside {

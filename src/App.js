@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 // import components
+import Helmet from './Components/Helmet';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import Aside from './Components/Aside';
@@ -17,6 +18,7 @@ class App extends Component{
   render(){
       return (
         <div className="App">
+          <Helmet/>
           <header>
             <Header />
           </header>
