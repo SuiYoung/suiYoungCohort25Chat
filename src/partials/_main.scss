@@ -10,6 +10,7 @@ header {
     width: 100vh;
     transform: rotate(-90deg);
     text-shadow: 3px 3px 3px $blackColor;
+    z-index: 10;
 }
 
 .asideButtonContainer {
@@ -18,6 +19,7 @@ header {
     position: absolute;
     left: 1%;
     top: 2%;
+    z-index: 10;
 
     h3 {
         margin-left: 6%;
@@ -45,7 +47,6 @@ aside {
     box-shadow: 3px 3px 3px $blackColor;
     padding-top: calc(10rem - 1.5vw);
     position: absolute;
-    z-index: -1;
 }
 
 .sideDrawer.open {
