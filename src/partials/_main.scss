@@ -1,9 +1,11 @@
-
+.application {
+    display: none;
+}
 
 // position header absolute.
 header {
     position: absolute;
-    top: 40rem;
+    top: 38rem;
     left: -45rem;
     width: 100vh;
 
@@ -24,19 +26,47 @@ header {
     justify-content: center;
 }
 
+.asideButtonContainer {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 1%;
+    top: 2%;
+
+    h3 {
+        margin-left: 6%;
+        margin-top: 1%;
+        width: 150px;
+    }
+}
+
+.instrIcon {
+    margin: 1%;
+    z-index: 10;
+}
+
+.instrIcon:active, .instrIcon:focus, .instrIcon:hover {
+    transform: rotate(360deg);
+    transition: all 1s ease-in-out;
+}
+
 aside {
-    // grid-area: 1 / 2;
     background: url(./../assets/boris-misevic-cQltbypBFvg-unsplash.jpg);
     background-size: cover;
     background-position: center;
-    width: 25vw;
+    width: 360px;
     height: 100vh;
     box-shadow: 3px 3px 3px $blackColor;
     padding-top: 5%;
 }
 
-.instructions {
-    width: 100%;
+.sideDrawer.open {
+        transform: translateX(-105%);
+}
+
+.sideDrawer {
+    width: 30%;
+    min-width: 320px;
     
     .instrContainer {
         width: 75%;

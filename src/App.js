@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // import components
 import Helmet from './Components/Helmet';
 import Header from './Components/Header';
+import InstructionButton from './Components/InstructionButton';
 import Main from './Components/Main';
 import Aside from './Components/Aside';
 import Footer from './Components/Footer';
@@ -15,28 +16,50 @@ import firebase from './firebase';
 import './App.scss';
 
 class App extends Component{
+  constructor(){
+    super();
+    this.state={
+      asideOpen: true,
+      messages: [],
+      userInput: ''
+    }
+  }
+  
+  // function to slide the aside in and out.
+  asideToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {asideOpen: !prevState.asideOpen};
+    })
+  }
+  
+  
   render(){
-      return (
-        <div className="App">
-          <Helmet/>
-          <header>
-            <Header />
-          </header>
+    
+    let asideDrawer;
+    
+    if (this.state.asideOpen) {
+      asideDrawer = <Aside />;
+    }
 
-          <section className="mainGrid">
-            <aside>
-              <Aside />
-            </aside>
+    return (
+      <div className="App">
+        <Helmet/>
+        <InstructionButton click={this.asideToggleClickHandler}/>
+        <header>
+          <Header />
+        </header>
+        {asideDrawer}
 
-            <main>
-              <Main />
-            </main>
-          </section>
+        <section className="mainGrid">
+          <main>
+            <Main />
+          </main>
+        </section>
 
-          {/* may not need footer */}
-          <Footer /> 
-        </div>
-      );
+        {/* may not need footer */}
+        <Footer /> 
+      </div>
+    );
   }
 }
 

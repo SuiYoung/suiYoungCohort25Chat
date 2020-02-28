@@ -8,6 +8,9 @@ class Application extends React.Component {
             <div className="application">
                 <Helmet>
                     <title>Cohort 25 Chat</title>
+                    {/* insert fontawesome kit */}
+                    <script src="https://kit.fontawesome.com/dfdc9c622d.js" crossorigin="anonymous"></script>
+                    
                 </Helmet>
                 ...
             </div>

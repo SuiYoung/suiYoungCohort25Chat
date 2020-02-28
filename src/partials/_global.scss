@@ -58,13 +58,12 @@ h2 {
 }
 
 h3 {
-    @include fluid-type (1.8rem, 3rem, 360px, 1280px);
+    @include fluid-type (1.8rem, 2rem, 360px, 1280px);
     margin: 0;
     padding: 0;
-    display: block;
-    width: 100%;
+    display: inline-block;
     line-height: 4rem;
-    color: black;
+    color: white;
 }
 
 h4 {
@@ -105,21 +104,23 @@ ul {
     @include fluid-type (1.5rem, 2.5rem, 360px, 1280px);
 }
 
+button {
+    background: none;
+}
 
 
 i {
     color: $whiteShadeColor;
-    font-size: 3rem;
+    font-size: 5rem;
+    text-shadow: 3px 3px 3px $blackColor;
 }
 
 i:hover {
-    text-shadow: 5px 5px 15px rgb(142, 183, 245), -5px -5px 15px rgb(142, 183, 245);
-
+    text-shadow: 5px 5px 5px $blackColor;
 }
 
-a {
-    padding: 10px;
-    color: black;
+i:active, i:focus {
+    text-shadow: 1px 1px 1px $blackColor;
 }
 
 img {
