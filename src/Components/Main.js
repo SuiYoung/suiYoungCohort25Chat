@@ -6,7 +6,7 @@ import MessageInputForm from './MessageInputForm';
 class Main extends Component{
 render(){
     return (
-        <div className="chat">
+        <div className="mainGrid">
             <div className="chatDisplay"></div>
             {/* <MessageInputForm /> */}
         </div>

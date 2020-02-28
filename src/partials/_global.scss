@@ -54,7 +54,7 @@ h2 {
     margin: 0;
     line-height: 4.5rem;
     display: inline;
-
+    text-shadow: 2px 2px 2px $blackColor;
 }
 
 h3 {
@@ -64,6 +64,7 @@ h3 {
     display: inline-block;
     line-height: 4rem;
     color: white;
+    text-shadow: 2px 2px 2px $blackColor;
 }
 
 h4 {

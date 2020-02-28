@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 
 const Header = ()=>{
     return(
-        <div>
             <h1>Cohort 25 Chat</h1>
-            
-        </div>
     )
 }
 
