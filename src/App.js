@@ -92,7 +92,7 @@ class App extends Component {
               return(
                 <div className="userText" key={message.key}>
                   <p>User: {message.key}, says:</p>
-                  <p>{message.name}</p>
+                  <p className="messageOut">{message.name}</p>
                 </div>
               )
             })}

@@ -15,13 +15,13 @@ const Aside = props => {
         <aside className={instructions}>
             <div className="instrContainer">
                 <h2>How To Use:</h2>
-                <ul>
+                <ol>
+                    <li>[tab]-to or click into the input field and type your message.</li>
+                    <li>Press [enter] or [tab] to the send button (the paper airplane)</li>
+                    <li>Your message will appear above!</li>
+                    <li>To clear your last message!</li>
                     <li>instructions here</li>
-                    <li>instructions here</li>
-                    <li>instructions here</li>
-                    <li>instructions here</li>
-                    <li>instructions here</li>
-                </ul>
+                </ol>
             </div>
         </aside>
     );

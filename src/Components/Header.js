@@ -1,5 +1,5 @@
 // a couple of functions from the React library
-import React, { Component } from 'react';
+import React from 'react';
 
 const Header = ()=>{
     return(

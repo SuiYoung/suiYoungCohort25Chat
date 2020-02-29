@@ -34,16 +34,20 @@ class MessageInputForm extends Component {
 
         <div className="messageInput">
             <form action="submit" onSubmit={this.handleSubmit}>
-            <label htmlFor="messageForm">Please Add A Toy To the ToyBox!</label>
+            <label 
+                className="visually-hidden" 
+                htmlFor="messageForm">Please type your message!</label>
             <input 
+                className="inputField"
                 type="text" 
                 id="messageForm" 
                 onChange={this.handleChange}
                 value={this.state.userInput} // good for accessibility and screen readers, this will track the changes even if they leave and come back
             />
             <button 
+                className="submitButton"
                 type="submit" 
-            > send </button>
+            > <i class="fas fa-paper-plane"></i> </button>
             </form>
         </div>
         );

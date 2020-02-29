@@ -26,16 +26,39 @@
     height: 12vh;
     background: white;
     border-radius: 25px 25px 0 0 ;
-    padding: 1%;
+    padding: 0.5%;
+    // display: flex;
+
     grid-area: 2;
+}
+
+.messageOut {
+    width: fit-content;
+    max-width: 75%;
 }
 
 .userText {
     background: rgba(0, 153, 255, 0.377);
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 0.5%;
     width: 50%;
+    max-width: 75%;
     display: inline-block;
     border-radius: 30px;
     padding: 0.5%;
+}
+
+input {
+    width: 96%;
+    @include fluid-type (1.5rem, 2rem, 360px, 1280px);
+    padding: 1% 2%;
+    border-radius: 25px;
+}
+
+.submitButton {
+    margin: 0.5%;
+
+    i {
+        color: rgba(0, 132, 255, 0.61);
+    }
 }

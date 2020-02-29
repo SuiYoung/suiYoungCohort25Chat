@@ -99,10 +99,10 @@ p {
 li, 
 ul {
     text-decoration: none;
-    list-style-type: none;
+    // list-style-type: none;
     line-height: 46px;
     font-family: 'Poppins';
-    @include fluid-type (1.5rem, 2.5rem, 360px, 1280px);
+    @include fluid-type (1.5rem, 2rem, 360px, 1280px);
 }
 
 button {
