@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Helmet from './Components/Helmet';
 import Header from './Components/Header';
 import InstructionButton from './Components/InstructionButton';
-import Main from './Components/Main';
+import MessageInputForm from './Components/MessageInputForm';
 import Aside from './Components/Aside';
 import Footer from './Components/Footer';
 
@@ -70,13 +70,17 @@ class App extends Component {
   };
 
   handleFormSubmit = e => {
-    e.preventDefault(); // default behavior of a form is to refresh the page. Stop this.
+    e.preventDefault(); 
     const dbRef = firebase.database().ref();
     dbRef.push(this.state.userInput);
     this.setState({
       userInput: ""
     });
   };
+
+      inputValue= (e) => {this.props.inputValue(e, this.handleChange)}
+      formSubmit=(e) => {this.props.formSubmit(e, this.handleFormSubmit)}
+
 
   render() {
     let asideDrawer;
@@ -93,8 +97,11 @@ class App extends Component {
           <Header />
         </header>
         {asideDrawer}
-          <Main />
-          
+        <div className="mainGrid">
+          <div className="chatDisplay"></div>
+          <MessageInputForm />
+        </div>
+
         {/* may not need footer */}
         <Footer />
       </div>

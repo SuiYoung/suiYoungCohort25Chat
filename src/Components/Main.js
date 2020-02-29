@@ -8,7 +8,7 @@ render(){
     return (
         <div className="mainGrid">
             <div className="chatDisplay"></div>
-            {/* <MessageInputForm /> */}
+            <MessageInputForm />
         </div>
     );
 }
