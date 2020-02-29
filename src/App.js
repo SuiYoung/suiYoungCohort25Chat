@@ -7,7 +7,6 @@ import Header from './Components/Header';
 import InstructionButton from './Components/InstructionButton';
 import MessageInputForm from './Components/MessageInputForm';
 import Aside from './Components/Aside';
-import Footer from './Components/Footer';
 
 // import firebase
 import firebase from './firebase';
@@ -54,20 +53,13 @@ class App extends Component {
         };
         newState.push(messageInfo);
       }
-
+      console.log(newState) 
       // call this.setState to update the component state using the local array newState.
       this.setState({
         messages: newState
       });
     });
   }
-
-  handleChange = e => {
-    // console.log('Things are changing', e.target.value);
-    this.setState({
-      userInput: e.target.value
-    });
-  };
 
   handleFormSubmit = e => {
     e.preventDefault(); 
@@ -77,10 +69,6 @@ class App extends Component {
       userInput: ""
     });
   };
-
-      inputValue= (e) => {this.props.inputValue(e, this.handleChange)}
-      formSubmit=(e) => {this.props.formSubmit(e, this.handleFormSubmit)}
-
 
   render() {
     let asideDrawer;
@@ -97,13 +85,20 @@ class App extends Component {
           <Header />
         </header>
         {asideDrawer}
-        <div className="mainGrid">
-          <div className="chatDisplay"></div>
-          <MessageInputForm />
-        </div>
 
-        {/* may not need footer */}
-        <Footer />
+        <div className="mainGrid">
+          <div className="chatDisplay">
+            {this.state.messages.map((message)=>{
+              return(
+                <div className="userText" key={message.key}>
+                  <p>User: {message.key}, says:</p>
+                  <p>{message.name}</p>
+                </div>
+              )
+            })}
+          </div>
+          <MessageInputForm handleFormSubmit={this.handleFormSubmit}/>
+        </div>
       </div>
     );
   }
