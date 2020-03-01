@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/suiYoungCohort25Chat/static/css/main.670aadeb.chunk.css",
-    "main.js": "/suiYoungCohort25Chat/static/js/main.a14beee2.chunk.js",
-    "main.js.map": "/suiYoungCohort25Chat/static/js/main.a14beee2.chunk.js.map",
+    "main.js": "/suiYoungCohort25Chat/static/js/main.cbb8acaf.chunk.js",
+    "main.js.map": "/suiYoungCohort25Chat/static/js/main.cbb8acaf.chunk.js.map",
     "runtime-main.js": "/suiYoungCohort25Chat/static/js/runtime-main.c8c72320.js",
     "runtime-main.js.map": "/suiYoungCohort25Chat/static/js/runtime-main.c8c72320.js.map",
     "static/js/2.2ff90d46.chunk.js": "/suiYoungCohort25Chat/static/js/2.2ff90d46.chunk.js",
     "static/js/2.2ff90d46.chunk.js.map": "/suiYoungCohort25Chat/static/js/2.2ff90d46.chunk.js.map",
     "index.html": "/suiYoungCohort25Chat/index.html",
-    "precache-manifest.03d2025e93112414419394679932de95.js": "/suiYoungCohort25Chat/precache-manifest.03d2025e93112414419394679932de95.js",
+    "precache-manifest.548759c0bc351b0f571938268d38c0ab.js": "/suiYoungCohort25Chat/precache-manifest.548759c0bc351b0f571938268d38c0ab.js",
     "service-worker.js": "/suiYoungCohort25Chat/service-worker.js",
     "static/css/main.670aadeb.chunk.css.map": "/suiYoungCohort25Chat/static/css/main.670aadeb.chunk.css.map",
     "static/js/2.2ff90d46.chunk.js.LICENSE.txt": "/suiYoungCohort25Chat/static/js/2.2ff90d46.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.c8c72320.js",
     "static/js/2.2ff90d46.chunk.js",
     "static/css/main.670aadeb.chunk.css",
-    "static/js/main.a14beee2.chunk.js"
+    "static/js/main.cbb8acaf.chunk.js"
   ]
 }
