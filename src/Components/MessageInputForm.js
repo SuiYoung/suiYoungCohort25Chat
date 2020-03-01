@@ -1,9 +1,6 @@
 // a couple of functions from the React library
 import React, { Component } from "react";
 
-// import firebase
-import firebase from './../firebase';
-
 class MessageInputForm extends Component {
     constructor(){
         super();
@@ -21,12 +18,6 @@ class MessageInputForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault(); 
-        // add ternary function for where there is no user input and enter is pressed. Want prompt.
-        // const dbRef = firebase.database().ref();
-        // dbRef.push(this.state.userInput);
-        // this.setState({
-        // userInput: ""
-        // });
         this.props.handleFormSubmit(this.state.userInput)
     };
 

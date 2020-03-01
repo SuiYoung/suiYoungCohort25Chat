@@ -37,6 +37,10 @@ class App extends Component {
   componentDidMount() {
     // create a variable that holds a reference to  database
     const dbRef = firebase.database().ref();
+    
+    // create a variable that holds a reference to the user's name.
+    const userName = prompt(`What's your name?`);
+    console.log(userName);
 
     // event listener that takes a callback function used to get data from the database and call it response.
     dbRef.on("value", response => {
@@ -46,9 +50,6 @@ class App extends Component {
 
       // create a variable to store the new state.
       const newState = [];
-
-      // create a variable that holds a reference to the user's name.
-      const userName = prompt(`What's your name?`);
 
       // loop over each value in the array and push them to a new array (newState).
       for (let key in dataFromDb) {
@@ -77,14 +78,9 @@ class App extends Component {
       userInput,
       userName: this.state.userName
     });
-    // this.setState({
-    //   userInput: ""
-    // });
   };
 
   render() {
-    // username prompt
-    
 
     // if statement for the aside state of being open or closed.
     let asideDrawer;

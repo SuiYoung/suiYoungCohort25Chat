@@ -17,6 +17,15 @@ header {
     i {
         @include fluid-type (2.5rem, 4rem, 360px, 1280px);
     }
+
+    button{ 
+        float: right;
+        position: relative;
+        top: -35%;
+        color: white;
+        @include fluid-type (2.5rem, 4rem, 360px, 1280px);
+        text-shadow: 3px 3px 3px $blackColor;
+    }
 }
 
 .asideButtonContainer {
