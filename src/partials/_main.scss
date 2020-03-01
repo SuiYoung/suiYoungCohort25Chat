@@ -2,15 +2,10 @@
     display: none;
 }
 
-// position header absolute.
 header {
-    // position: absolute;
-    // top: calc(-15rem + calc(25vw - 3vw));
-    // // left: -45rem;
     width: 100vw;
     padding: 1%;
     background: rgb(110, 135, 173);
-    // transform: rotate(-90deg);
     text-shadow: 3px 3px 3px $blackColor;
     z-index: 5;
 
@@ -21,7 +16,7 @@ header {
     button{ 
         float: right;
         position: relative;
-        top: -35%;
+        top: -30%;
         color: white;
         @include fluid-type (2.5rem, 4rem, 360px, 1280px);
         text-shadow: 3px 3px 3px $blackColor;

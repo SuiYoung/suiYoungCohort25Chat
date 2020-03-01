@@ -40,13 +40,13 @@ class App extends Component {
     
     // create a variable that holds a reference to the user's name.
     const userName = prompt(`What's your name?`);
-    console.log(userName);
+    // console.log(userName);
 
     // event listener that takes a callback function used to get data from the database and call it response.
     dbRef.on("value", response => {
       const dataFromDb = response.val();
       // see the information and parse the way we want it.
-      console.log("dataFromDb", dataFromDb);
+      // console.log("dataFromDb", dataFromDb);
 
       // create a variable to store the new state.
       const newState = [];
@@ -60,7 +60,7 @@ class App extends Component {
         };
         newState.push(messageInfo);
       }
-      console.log('newState Array:', newState);
+      // console.log('newState Array:', newState);
       // call this.setState to update the component state using the local array newState.
       this.setState({
         messages: newState,
@@ -77,6 +77,14 @@ class App extends Component {
       userName: this.state.userName
     });
   };
+
+  remove = (key) => {
+    // event.preventDefault();
+    const dbRef = firebase.database().ref();
+    console.log('dbRef', dbRef.child(key))
+    console.log('key', key);
+    dbRef.child(key).remove();
+  }
 
   render() {
 
@@ -101,7 +109,7 @@ class App extends Component {
             {this.state.messages.map(message => {
               return (
                 <div className="userText" key={message.key}>
-                  <button className="cross" onClick={()=>{this.remove(this.newState.id)}}>X</button><p>User: {message.message.userName}, says:</p>
+                  <button className="cross" onClick={()=>{this.remove(message.key)}}>X</button><p>User: {message.message.userName}, says:</p>
                   <p>{message.message.userInput}</p>
                 </div>
               );

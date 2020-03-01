@@ -19,8 +19,8 @@ const Aside = props => {
                     <li><span className="blueFont">[tab]</span>-to or click into the input field and type your message.</li>
                     <li>Press <span className="blueFont">[enter]</span> or <span className="blueFont">[tab]</span> to the send button (the paper airplane)</li>
                     <li>Your message will appear above!</li>
+                    <li>Click <span className="blueFont">[New User]</span> button at the top right to give a new user name!</li>
                     <li>To clear your last message!</li>
-                    <li>instructions here</li>
                 </ol>
             </div>
         </aside>
