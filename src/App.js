@@ -33,7 +33,7 @@ class App extends Component {
 
   // function for the chat input and display
   componentDidMount() {
-    // create a variable that holds a reference to our database
+    // create a variable that holds a reference to  database
     const dbRef = firebase.database().ref();
 
     // event listener that takes a callback function used to get data from the database and call it response.
@@ -53,7 +53,7 @@ class App extends Component {
         };
         newState.push(messageInfo);
       }
-      console.log(newState) 
+      console.log('newState Array:', newState);
       // call this.setState to update the component state using the local array newState.
       this.setState({
         messages: newState
@@ -61,14 +61,16 @@ class App extends Component {
     });
   }
 
+  // on submit, push user input into firebase
   handleFormSubmit = e => {
-    e.preventDefault(); 
+    e.preventDefault();
     const dbRef = firebase.database().ref();
     dbRef.push(this.state.userInput);
     this.setState({
       userInput: ""
     });
   };
+
 
   render() {
     let asideDrawer;
@@ -88,16 +90,16 @@ class App extends Component {
 
         <div className="mainGrid">
           <div className="chatDisplay">
-            {this.state.messages.map((message)=>{
-              return(
+            {this.state.messages.map(message => {
+              return (
                 <div className="userText" key={message.key}>
-                  <p>User: {message.key}, says:</p>
-                  <p className="messageOut">{message.name}</p>
+                  <button className="cross" onClick={()=>{this.remove(this.newState.id)}}>X</button><p>User: {message.key}, says:</p>
+                  <p>{message.name}</p>
                 </div>
-              )
+              );
             })}
           </div>
-          <MessageInputForm handleFormSubmit={this.handleFormSubmit}/>
+          <MessageInputForm handleFormSubmit={this.handleFormSubmit} />
         </div>
       </div>
     );

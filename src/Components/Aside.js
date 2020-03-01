@@ -16,8 +16,8 @@ const Aside = props => {
             <div className="instrContainer">
                 <h2>How To Use:</h2>
                 <ol>
-                    <li>[tab]-to or click into the input field and type your message.</li>
-                    <li>Press [enter] or [tab] to the send button (the paper airplane)</li>
+                    <li><span className="blueFont">[tab]</span>-to or click into the input field and type your message.</li>
+                    <li>Press <span className="blueFont">[enter]</span> or <span className="blueFont">[tab]</span> to the send button (the paper airplane)</li>
                     <li>Your message will appear above!</li>
                     <li>To clear your last message!</li>
                     <li>instructions here</li>

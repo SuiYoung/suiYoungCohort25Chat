@@ -4,13 +4,19 @@
 
 // position header absolute.
 header {
-    position: absolute;
-    top: 38rem;
-    left: -45rem;
-    width: 100vh;
-    transform: rotate(-90deg);
+    // position: absolute;
+    // top: calc(-15rem + calc(25vw - 3vw));
+    // // left: -45rem;
+    width: 100vw;
+    padding: 1%;
+    background: rgb(110, 135, 173);
+    // transform: rotate(-90deg);
     text-shadow: 3px 3px 3px $blackColor;
-    z-index: 10;
+    z-index: 5;
+
+    i {
+        @include fluid-type (2.5rem, 4rem, 360px, 1280px);
+    }
 }
 
 .asideButtonContainer {
@@ -18,7 +24,7 @@ header {
     align-items: center;
     position: absolute;
     left: 1%;
-    top: 2%;
+    top: 10%;
     z-index: 10;
 
     h3 {
@@ -26,6 +32,10 @@ header {
         margin-top: 1%;
         width: 150px;
     }
+}
+
+.blueFont {
+    color: rgb(0, 102, 255);
 }
 
 .instrIcon {
@@ -43,7 +53,7 @@ aside {
     background-size: cover;
     background-position: center;
     width: 360px;
-    height: 100vh;
+    height: 95%;
     box-shadow: 3px 3px 3px $blackColor;
     padding-top: calc(10rem - 1.5vw);
     position: absolute;
@@ -58,7 +68,7 @@ aside {
     min-width: 320px;
     
     .instrContainer {
-        width: 75%;
+        width: 72%;
         margin: 0 auto;
         padding: 5%;
         background: rgba(255, 255, 255, 0.507);;

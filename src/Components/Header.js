@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = ()=>{
     return(
-            <h1>Cohort 25 Chat</h1>
+            <h1>Cohort 25 Chat <i className="fas fa-comment-dots"></i></h1>
     )
 }
 

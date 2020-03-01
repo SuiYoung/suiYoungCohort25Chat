@@ -21,6 +21,7 @@ class MessageInputForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault(); 
+        // add ternary function for where there is no user input and enter is pressed. Want prompt.
         const dbRef = firebase.database().ref();
         dbRef.push(this.state.userInput);
         this.setState({
@@ -47,7 +48,9 @@ class MessageInputForm extends Component {
             <button 
                 className="submitButton"
                 type="submit" 
-            > <i class="fas fa-paper-plane"></i> </button>
+            > 
+            <i className="fas fa-paper-plane"></i> 
+            </button>
             </form>
         </div>
         );

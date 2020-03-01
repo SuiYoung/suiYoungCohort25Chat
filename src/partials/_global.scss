@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    // border: 0.5px solid green;
 }
 
 html {
@@ -11,8 +10,8 @@ html {
 }
 
 body {
-    // overflow-y: hidden;
-    // overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
     background: $lightBlueGrey;
     height:100vh;
 }
@@ -91,7 +90,7 @@ p {
     font-family: 'Poppins';
     @include fluid-type (1.5rem, 2.5rem, 360px, 1280px);
     margin: 0;
-    line-height: 4rem;
+    line-height: 2.5rem;
 }
 
 
@@ -100,8 +99,9 @@ li,
 ul {
     text-decoration: none;
     // list-style-type: none;
-    line-height: 46px;
+    line-height: 2.5rem;
     font-family: 'Poppins';
+    margin-left: 10%;
     @include fluid-type (1.5rem, 2rem, 360px, 1280px);
 }
 
