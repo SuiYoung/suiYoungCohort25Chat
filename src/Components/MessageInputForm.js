@@ -18,7 +18,10 @@ class MessageInputForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault(); 
-        this.props.handleFormSubmit(this.state.userInput)
+        this.props.handleFormSubmit(this.state.userInput);
+        // return input to empty.
+        // eslint-disable-next-line
+        this.state.userInput=""
     };
 
 
