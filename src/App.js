@@ -71,8 +71,6 @@ class App extends Component {
 
   // on submit, push user input into firebase
   handleFormSubmit = userInput => {
-    console.log('hello?')
-    // e.preventDefault();
     const dbRef = firebase.database().ref();
     dbRef.push({
       userInput,
