@@ -61,6 +61,7 @@ aside {
     box-shadow: 3px 3px 3px $blackColor;
     padding-top: calc(10rem - 1.5vw);
     position: absolute;
+    z-index: 1;
 }
 
 .sideDrawer.open {

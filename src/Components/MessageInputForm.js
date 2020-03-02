@@ -1,6 +1,6 @@
 // a couple of functions from the React library
 import React, { Component } from "react";
-import { Howl, Howler } from "howler";
+// import { Howl, Howler } from "howler";
 
 // // import audio clip
 // import click from './../audioClips/soundsofawesome_click.wav';
