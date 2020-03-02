@@ -20,7 +20,7 @@ const Aside = props => {
                     <li>Press <span className="blueFont">[enter]</span> or <span className="blueFont">[tab]</span> to the send button (the paper airplane)</li>
                     <li>Your message will appear above!</li>
                     <li>Click <span className="blueFont">[New User]</span> button at the top right to give a new user name!</li>
-                    <li>To clear your last message Click the "<i class="fas fa-trash-alt"></i>"!</li>
+                    <li>To clear your last message Click the "<i className="fas fa-trash-alt"></i>"!</li>
                 </ol>
             </div>
         </aside>

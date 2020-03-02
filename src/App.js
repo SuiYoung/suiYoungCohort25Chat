@@ -25,8 +25,8 @@ class App extends Component {
       messages: [],
       userInput: "",
       userName: "",
-      userID: "",
-      userImg: ""
+      userImg: "",
+      userColor: ""
     };
   }
 
@@ -80,60 +80,40 @@ class App extends Component {
         console.log(this.state.userImg);
 
         // user select their color:
-        /* inputOptions can be an object or Promise */
-        const inputOptions = new Promise((resolve) => {
-          setTimeout(() => {
-            resolve({
-              '#ff0000': 'Red',
-              '#00ff00': 'Green',
-              '#0000ff': 'Blue',
-              '#000000': 'Black',
-            })
-          }, 1000)
-        })
 
-        const { value: color } = Swal.fire({
-          title: 'Select color',
-          input: 'radio',
-          inputOptions: inputOptions,
-          inputValidator: (value) => {
-            if (!value) {
-              return 'You need to choose something!'
+        (async () => {
+          /* inputOptions can be an object or Promise */
+          const inputOptions = new Promise(resolve => {
+            setTimeout(() => {
+              resolve({
+                "#ff0000": "Red",
+                "#00ff00": "Green",
+                "#0000ff": "Blue",
+                "#000000": "Black"
+              });
+            }, 1000);
+          });
+
+          const { value: color } = await Swal.fire({
+            title: "Select color",
+            input: "radio",
+            inputOptions: inputOptions,
+            inputValidator: value => {
+              if (!value) {
+                return "You need to choose something!";
+              }
             }
+          });
+
+          if (color) {
+            Swal.fire({ html: `You selected: ${color}` });
           }
-        })
-
-        if (color) {
-          Swal.fire({ html: `You selected: ${color}` })
-        }
-
-
-        // retrieve user IP Address
-        const ipAPI = "//api.ipify.org?format=json";
-        Swal.queue([
-          {
-            title: "Your public IP",
-            confirmButtonText: "Show my public IP",
-            text: "Your public IP will be received via AJAX request",
-            showLoaderOnConfirm: true,
-            preConfirm: () => {
-              return fetch(ipAPI)
-                .then(response => response.json())
-                .then(data => {
-                  Swal.insertQueueStep(data.ip);
-                  this.setState({
-                    userId: data.ip
-                  });
-                })
-                .catch(() => {
-                  Swal.insertQueueStep({
-                    icon: "error",
-                    title: "Unable to get your public IP"
-                  });
-                });
-            }
-          }
-        ]);
+          this.setState({
+            userColor: color,
+          })
+          console.log(this.state.userColor);
+        })();
+  
       }
       userName = result.value.login;
 
@@ -174,8 +154,8 @@ class App extends Component {
     dbRef.push({
       userInput,
       userName: this.state.userName,
-      userId: this.state.userId,
-      userImg: this.state.userImg
+      userImg: this.state.userImg,
+      userColor: this.state.userColor
     });
   };
   1;
