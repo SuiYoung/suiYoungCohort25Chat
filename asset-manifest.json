@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/suiYoungCohort25Chat/static/css/main.4e2d6c44.chunk.css",
+    "main.css": "/suiYoungCohort25Chat/static/css/main.cea0415a.chunk.css",
     "main.js": "/suiYoungCohort25Chat/static/js/main.3cb97eb4.chunk.js",
     "main.js.map": "/suiYoungCohort25Chat/static/js/main.3cb97eb4.chunk.js.map",
     "runtime-main.js": "/suiYoungCohort25Chat/static/js/runtime-main.c8c72320.js",
@@ -8,16 +8,16 @@
     "static/js/2.d06c8d6c.chunk.js": "/suiYoungCohort25Chat/static/js/2.d06c8d6c.chunk.js",
     "static/js/2.d06c8d6c.chunk.js.map": "/suiYoungCohort25Chat/static/js/2.d06c8d6c.chunk.js.map",
     "index.html": "/suiYoungCohort25Chat/index.html",
-    "precache-manifest.6e49227b9c6d4a68eb6e8210bb7ca966.js": "/suiYoungCohort25Chat/precache-manifest.6e49227b9c6d4a68eb6e8210bb7ca966.js",
+    "precache-manifest.a4ded2f05dcedf3e031efeed2801814c.js": "/suiYoungCohort25Chat/precache-manifest.a4ded2f05dcedf3e031efeed2801814c.js",
     "service-worker.js": "/suiYoungCohort25Chat/service-worker.js",
-    "static/css/main.4e2d6c44.chunk.css.map": "/suiYoungCohort25Chat/static/css/main.4e2d6c44.chunk.css.map",
+    "static/css/main.cea0415a.chunk.css.map": "/suiYoungCohort25Chat/static/css/main.cea0415a.chunk.css.map",
     "static/js/2.d06c8d6c.chunk.js.LICENSE.txt": "/suiYoungCohort25Chat/static/js/2.d06c8d6c.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/suiYoungCohort25Chat/static/media/boris-misevic-cQltbypBFvg-unsplash.f5fca77f.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.c8c72320.js",
     "static/js/2.d06c8d6c.chunk.js",
-    "static/css/main.4e2d6c44.chunk.css",
+    "static/css/main.cea0415a.chunk.css",
     "static/js/main.3cb97eb4.chunk.js"
   ]
 }
