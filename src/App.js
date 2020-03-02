@@ -11,6 +11,9 @@ import Aside from './Components/Aside';
 // import firebase
 import firebase from './firebase';
 
+// import sweet alerts
+import Swal from "sweetalert2";
+
 // CSS for the `App` component
 import './App.scss';
 
@@ -22,7 +25,9 @@ class App extends Component {
       asideOpen: true,
       messages: [],
       userInput: "",
-      userName: ""
+      userName: "",
+      userID: "",
+      userImg: ""
     };
   }
 
@@ -39,8 +44,76 @@ class App extends Component {
     const dbRef = firebase.database().ref();
     
     // create a variable that holds a reference to the user's name.
-    const userName = prompt(`What's your name?`);
-    // console.log(userName);
+    let userName;
+
+    Swal.fire({
+      icon: "question",
+      title: "Submit your Github username",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off"
+      },
+      showCancelButton: false,
+      confirmButtonText: "Look up",
+      showLoaderOnConfirm: true,
+      preConfirm: login => {
+        return fetch(`//api.github.com/users/${login}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(response.statusText);
+            }
+            return response.json();
+          })
+          .catch(error => {
+            Swal.showValidationMessage(`Request failed: ${error}`);
+          });
+      },
+      allowOutsideClick: false
+    }).then(result => {
+      if (result.value) {
+        Swal.fire({
+          title: `Here is ${result.value.login}'s avatar!`,
+          imageUrl: result.value.avatar_url
+        });
+          this.setState ({
+            userImg: result.value.avatar_url
+          })
+          console.log(this.state.userImg)
+        // retrieve user IP Address
+        const ipAPI = "//api.ipify.org?format=json";
+        Swal.queue([
+          {
+            title: "Your public IP",
+            confirmButtonText: "Show my public IP",
+            text: "Your public IP will be received via AJAX request",
+            showLoaderOnConfirm: true,
+            preConfirm: () => {
+              return fetch(ipAPI)
+                .then(response => response.json())
+                .then(data => {
+                  Swal.insertQueueStep(data.ip)
+                  this.setState({
+                    userId: data.ip
+                  });
+                })
+                .catch(() => {
+                  Swal.insertQueueStep({
+                    icon: "error",
+                    title: "Unable to get your public IP"
+                  });
+                });
+
+            }
+          }
+        ]);
+      }
+      userName = result.value.login;
+      
+      this.setState({
+        userName: userName
+      });
+    });
+
 
     // event listener that takes a callback function used to get data from the database and call it response.
     dbRef.on("value", response => {
@@ -74,9 +147,10 @@ class App extends Component {
     const dbRef = firebase.database().ref();
     dbRef.push({
       userInput,
-      userName: this.state.userName
+      userName: this.state.userName,
+      userId: this.state.userId
     });
-  };
+  };1
 
   remove = (key) => {
     // event.preventDefault();
@@ -109,7 +183,8 @@ class App extends Component {
             {this.state.messages.map(message => {
               return (
                 <div className="userText" key={message.key}>
-                  <button className="cross" onClick={()=>{this.remove(message.key)}}>X</button><p>User: {message.message.userName}, says:</p>
+                  <img src={this.state.userImg} alt="This is {message.message.userName}'s avatar"/>
+                  <button className="cross" onClick={()=>{this.remove(message.key)}}>X</button> <p>User: {message.message.userName}, says:</p>
                   <p>{message.message.userInput}</p>
                 </div>
               );
