@@ -24,6 +24,7 @@ class App extends Component {
     this.state = {
       asideOpen: true,
       messages: [],
+      userMessages: [],
       userInput: "",
       userName: "",
       userID: "",
@@ -139,16 +140,18 @@ class App extends Component {
         messages: newState,
         userName
       });
+      console.log(newState);
     });
   }
-
+  
   // on submit, push user input into firebase
   handleFormSubmit = userInput => {
     const dbRef = firebase.database().ref();
     dbRef.push({
-      userInput,
+      userInput: this.state.userInput,
       userName: this.state.userName,
-      userId: this.state.userId
+      userId: this.state.userId,
+      userImg: this.state.userImg
     });
   };1
 
@@ -183,9 +186,11 @@ class App extends Component {
             {this.state.messages.map(message => {
               return (
                 <div className="userText" key={message.key}>
-                  <img src={this.state.userImg} alt="This is {message.message.userName}'s avatar"/>
-                  <button className="cross" onClick={()=>{this.remove(message.key)}}>X</button> <p>User: {message.message.userName}, says:</p>
-                  <p>{message.message.userInput}</p>
+                  <img src={this.state.userImg} alt={message.message.userName}/>
+
+                  <button className="cross" onClick={()=>{this.remove(message.key)}}>X</button> 
+                  
+                  <p><span className="blueFont">{message.message.userName}</span>: {message.message.userInput}</p>
                 </div>
               );
             })}

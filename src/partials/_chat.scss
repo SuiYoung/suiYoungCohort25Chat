@@ -47,14 +47,15 @@
     margin: 0.5%;
     width: auto;
     max-width: 75%;
+    min-width: 25%;
     display: table;
     border-radius: 30px;
     padding: 1.5%;
 
     img {
         float: right;
-        width: 5rem;
-        height: 5rem;
+        width: 3rem;
+        height: 3rem;
     }
 
     .cross {
@@ -64,7 +65,8 @@
         border-radius: 50%;
         text-align: center;
         padding-top: 5px;
-        margin: 1.25%;
+        margin: 1.5%;
+        margin-right: 5%;
         @include fluid-type (1.2rem, 1.5rem, 360px, 1280px);
         float: left;
         font-weight: bold;
