@@ -79,7 +79,7 @@ class App extends Component {
           this.setState ({
             userImg: result.value.avatar_url
           })
-          console.log(this.state.userImg)
+          console.log('userImg', this.state.userImg)
         // retrieve user IP Address
         const ipAPI = "//api.ipify.org?format=json";
         Swal.queue([
@@ -120,7 +120,7 @@ class App extends Component {
     dbRef.on("value", response => {
       const dataFromDb = response.val();
       // see the information and parse the way we want it.
-      // console.log("dataFromDb", dataFromDb);
+      console.log("dataFromDb", dataFromDb);
 
       // create a variable to store the new state.
       const newState = [];
@@ -134,13 +134,12 @@ class App extends Component {
         };
         newState.push(messageInfo);
       }
-      // console.log('newState Array:', newState);
       // call this.setState to update the component state using the local array newState.
       this.setState({
         messages: newState,
         userName
       });
-      console.log(newState);
+      console.log('newState Array:', newState);
     });
   }
   
@@ -186,7 +185,7 @@ class App extends Component {
             {this.state.messages.map(message => {
               return (
                 <div className="userText" key={message.key}>
-                  <img src={this.state.userImg} alt={message.message.userName}/>
+                  <img src={message.message.userImg} alt={message.message.userName}/>
 
                   <button className="cross" onClick={()=>{this.remove(message.key)}}>X</button> 
                   
@@ -205,4 +204,4 @@ class App extends Component {
 
 export default App;
 
- 
+
