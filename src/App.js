@@ -1,22 +1,21 @@
 // a couple of functions from the React library
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 // import components
-import Helmet from './Components/Helmet';
-import Header from './Components/Header';
-import InstructionButton from './Components/InstructionButton';
-import MessageInputForm from './Components/MessageInputForm';
-import Aside from './Components/Aside';
+import Helmet from "./Components/Helmet";
+import Header from "./Components/Header";
+import InstructionButton from "./Components/InstructionButton";
+import MessageInputForm from "./Components/MessageInputForm";
+import Aside from "./Components/Aside";
 
 // import firebase
-import firebase from './firebase';
+import firebase from "./firebase";
 
 // import sweet alerts
 import Swal from "sweetalert2";
 
 // CSS for the `App` component
-import './App.scss';
-
+import "./App.scss";
 
 class App extends Component {
   constructor() {
@@ -24,7 +23,6 @@ class App extends Component {
     this.state = {
       asideOpen: true,
       messages: [],
-      userMessages: [],
       userInput: "",
       userName: "",
       userID: "",
@@ -43,7 +41,7 @@ class App extends Component {
   componentDidMount() {
     // create a variable that holds a reference to  database
     const dbRef = firebase.database().ref();
-    
+
     // create a variable that holds a reference to the user's name.
     let userName;
 
@@ -76,10 +74,10 @@ class App extends Component {
           title: `Here is ${result.value.login}'s avatar!`,
           imageUrl: result.value.avatar_url
         });
-          this.setState ({
-            userImg: result.value.avatar_url
-          })
-          console.log('userImg', this.state.userImg)
+        this.setState({
+          userImg: result.value.avatar_url
+        });
+        console.log(this.state.userImg);
         // retrieve user IP Address
         const ipAPI = "//api.ipify.org?format=json";
         Swal.queue([
@@ -92,7 +90,7 @@ class App extends Component {
               return fetch(ipAPI)
                 .then(response => response.json())
                 .then(data => {
-                  Swal.insertQueueStep(data.ip)
+                  Swal.insertQueueStep(data.ip);
                   this.setState({
                     userId: data.ip
                   });
@@ -103,18 +101,16 @@ class App extends Component {
                     title: "Unable to get your public IP"
                   });
                 });
-
             }
           }
         ]);
       }
       userName = result.value.login;
-      
+
       this.setState({
         userName: userName
       });
     });
-
 
     // event listener that takes a callback function used to get data from the database and call it response.
     dbRef.on("value", response => {
@@ -130,40 +126,39 @@ class App extends Component {
         const messageInfo = {
           key: key,
           message: dataFromDb[key]
-
         };
         newState.push(messageInfo);
       }
+      console.log('newState Array:', newState);
       // call this.setState to update the component state using the local array newState.
       this.setState({
         messages: newState,
         userName
       });
-      console.log('newState Array:', newState);
     });
   }
-  
+
   // on submit, push user input into firebase
   handleFormSubmit = userInput => {
     const dbRef = firebase.database().ref();
     dbRef.push({
-      userInput: this.state.userInput,
+      userInput,
       userName: this.state.userName,
       userId: this.state.userId,
       userImg: this.state.userImg
     });
-  };1
+  };
+  1;
 
-  remove = (key) => {
+  remove = key => {
     // event.preventDefault();
     const dbRef = firebase.database().ref();
-    console.log('dbRef', dbRef.child(key))
-    console.log('key', key);
+    console.log("dbRef", dbRef.child(key));
+    console.log("key", key);
     dbRef.child(key).remove();
-  }
+  };
 
   render() {
-
     // if statement for the aside state of being open or closed.
     let asideDrawer;
 
@@ -185,11 +180,22 @@ class App extends Component {
             {this.state.messages.map(message => {
               return (
                 <div className="userText" key={message.key}>
-                  <img src={message.message.userImg} alt={message.message.userName}/>
-
-                  <button className="cross" onClick={()=>{this.remove(message.key)}}>X</button> 
-                  
-                  <p><span className="blueFont">{message.message.userName}</span>: {message.message.userInput}</p>
+                  <img
+                    src={message.message.userImg}
+                    alt={message.message.userName}
+                  />
+                  <button
+                    className="cross"
+                    onClick={() => {
+                      this.remove(message.key);
+                    }}
+                  >
+                    X
+                  </button>{" "}
+                  <p>
+                    <span className="blueFont">{message.message.userName}</span>
+                    : {message.message.userInput}
+                  </p>
                 </div>
               );
             })}
@@ -201,7 +207,4 @@ class App extends Component {
   }
 }
 
-
 export default App;
-
-
