@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fd518ba33a3347c54276bf13dfff1cc5",
+    "revision": "a9192e4b255f2e2dc92dcbba77bdcc2b",
     "url": "/suiYoungCohort25Chat/index.html"
   },
   {
-    "revision": "a4b7da4e578d61bd4114",
-    "url": "/suiYoungCohort25Chat/static/css/main.cea0415a.chunk.css"
+    "revision": "a6bd4291cd3786d8ef4f",
+    "url": "/suiYoungCohort25Chat/static/css/main.bd589180.chunk.css"
   },
   {
     "revision": "e0edb16dc1b110d7f0bb",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/suiYoungCohort25Chat/static/js/2.d06c8d6c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a4b7da4e578d61bd4114",
-    "url": "/suiYoungCohort25Chat/static/js/main.3cb97eb4.chunk.js"
+    "revision": "a6bd4291cd3786d8ef4f",
+    "url": "/suiYoungCohort25Chat/static/js/main.38a397f4.chunk.js"
   },
   {
     "revision": "0c0d5b2e58111d242547",
