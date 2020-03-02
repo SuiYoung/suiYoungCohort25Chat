@@ -190,7 +190,7 @@ class App extends Component {
                       this.remove(message.key);
                     }}
                   >
-                    X
+                    <i className="fas fa-trash-alt"></i>
                   </button>{" "}
                   <p>
                     <span className="blueFont">{message.message.userName}</span>
