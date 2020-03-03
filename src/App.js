@@ -160,14 +160,6 @@ class App extends Component {
     });
   };
 
-  // 🧠 function to remove messages
-  remove = key => {
-    const dbRef = firebase.database().ref();
-    console.log("dbRef", dbRef.child(key));
-    console.log("key", key);
-    dbRef.child(key).remove();
-  };
-
   render() {
     // if statement for the aside state of being open or closed.
     let asideDrawer;
@@ -196,7 +188,8 @@ class App extends Component {
               console.log("message array", message);
               return (
                 // Div containers for each message.
-                <EachMessage msgProp = {message}/>
+                <EachMessage msgProp = {message} removeProp={this.remove}/>
+
               );
             })}
           </div>

@@ -1,10 +1,20 @@
 // a couple of functions from the React library
 import React from "react";
-// import Aside from './Aside';
+
+// import firebase
+import firebase from "./../firebase";
 
 const EachMessage = ({msgProp}) => {
     console.log(msgProp);
-        // console.log(props.key)
+
+    // 🧠 function to remove messages
+    let remove = key => {
+        const dbRef = firebase.database().ref();
+        console.log("dbRef", dbRef.child(msgProp.key));
+        console.log("key", msgProp.key);
+        dbRef.child(msgProp.key).remove();
+    };
+    
         return (
             <div className="default" key={msgProp.key}>
                 {/* Github Avatar for each user */}
@@ -16,7 +26,7 @@ const EachMessage = ({msgProp}) => {
                 <button
                     className="trash"
                     onClick={() => {
-                    this.remove(msgProp.message.key);
+                    remove(msgProp.message.key);
                     }}
                 >
                     <i className="fas fa-trash-alt"></i>
