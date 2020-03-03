@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding: 1%;
+    padding: 2%;
     overflow-y:auto;
 }
 
@@ -40,7 +40,7 @@
     }
 }
 
-.userText {
+.default {
     background: rgba(0, 153, 255, 0.377);
     color: rgb(0, 0, 0);
     margin: 0.5%;
@@ -58,7 +58,7 @@
         border-radius: 50%;
     }
 
-    .cross {
+    .trash {
         background: white;
         width: 3rem;
         height: 3rem;
@@ -81,14 +81,221 @@
         }
     }
 
-    .cross:hover {
+    .trash:hover {
         box-shadow: 5px 5px 5px $blackColor;
     }
 
-    .cross:active, .cross:focus {
+    .trash:active, .trash:focus {
         box-shadow: 1.5px 1.5px 1.5px $blackColor;
     }
 }
+
+// create secondary classes for user selected chat bubble colors.
+.redBubble {
+    background: #490404;
+    color: white;
+    margin: 0.5%;
+    width: auto;
+    max-width: 75%;
+    min-width: 25%;
+    display: table;
+    border-radius: 30px;
+    padding: 1.5%;
+
+    img {
+        float: right;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+
+    .trash {
+        background: white;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 5px;
+        margin: 1.5%;
+        margin-right: 5%;
+        @include fluid-type (1.2rem, 1.5rem, 360px, 1280px);
+        float: left;
+        font-weight: bold;
+        box-shadow: 3px 3px 3px $blackColor;
+
+        i {
+            font-size: 1.5rem;
+            color: black;
+            position: relative;
+            top: -2px;
+            z-index: 0;
+        }
+    }
+
+    .trash:hover {
+        box-shadow: 5px 5px 5px $blackColor;
+    }
+
+    .trash:active,
+    .trash:focus {
+        box-shadow: 1.5px 1.5px 1.5px $blackColor;
+    }
+}
+
+.greenBubble {
+    background: #004700;
+    color: white;
+    margin: 0.5%;
+    width: auto;
+    max-width: 75%;
+    min-width: 25%;
+    display: table;
+    border-radius: 30px;
+    padding: 1.5%;
+
+    img {
+        float: right;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+
+    .trash {
+        background: white;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 5px;
+        margin: 1.5%;
+        margin-right: 5%;
+        @include fluid-type (1.2rem, 1.5rem, 360px, 1280px);
+        float: left;
+        font-weight: bold;
+        box-shadow: 3px 3px 3px $blackColor;
+
+        i {
+            font-size: 1.5rem;
+            color: black;
+            position: relative;
+            top: -2px;
+            z-index: 0;
+        }
+    }
+
+    .trash:hover {
+        box-shadow: 5px 5px 5px $blackColor;
+    }
+
+    .trash:active,
+    .trash:focus {
+        box-shadow: 1.5px 1.5px 1.5px $blackColor;
+    }
+}
+
+.blueBubble {
+    background: #080870;
+    color: white;
+    margin: 0.5%;
+    width: auto;
+    max-width: 75%;
+    min-width: 25%;
+    display: table;
+    border-radius: 30px;
+    padding: 1.5%;
+
+    img {
+        float: right;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+
+    .trash {
+        background: white;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 5px;
+        margin: 1.5%;
+        margin-right: 5%;
+        @include fluid-type (1.2rem, 1.5rem, 360px, 1280px);
+        float: left;
+        font-weight: bold;
+        box-shadow: 3px 3px 3px $blackColor;
+
+        i {
+            font-size: 1.5rem;
+            color: black;
+            position: relative;
+            top: -2px;
+            z-index: 0;
+        }
+    }
+
+    .trash:hover {
+        box-shadow: 5px 5px 5px $blackColor;
+    }
+
+    .trash:active,
+    .trash:focus {
+        box-shadow: 1.5px 1.5px 1.5px $blackColor;
+    }
+}
+
+.blackBubble {
+    background: #000000;
+    color: white;
+    margin: 0.5%;
+    width: auto;
+    max-width: 75%;
+    min-width: 25%;
+    display: table;
+    border-radius: 30px;
+    padding: 1.5%;
+
+    img {
+        float: right;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+
+    .trash {
+        background: white;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 5px;
+        margin: 1.5%;
+        margin-right: 5%;
+        @include fluid-type (1.2rem, 1.5rem, 360px, 1280px);
+        float: left;
+        font-weight: bold;
+        box-shadow: 3px 3px 3px $blackColor;
+
+        i {
+            font-size: 1.5rem;
+            color: black;
+            position: relative;
+            top: -2px;
+            z-index: 0;
+        }
+    }
+
+    .trash:hover {
+        box-shadow: 5px 5px 5px $blackColor;
+    }
+
+    .trash:active,
+    .trash:focus {
+        box-shadow: 1.5px 1.5px 1.5px $blackColor;
+    }
+}
+
+
 
 input {
     margin-top: 1%;

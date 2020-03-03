@@ -86,10 +86,11 @@ class App extends Component {
           const inputOptions = new Promise(resolve => {
             setTimeout(() => {
               resolve({
-                "#ff0000": "Red",
-                "#00ff00": "Green",
-                "#0000ff": "Blue",
-                "#000000": "Black"
+                "redBubble": "Red",
+                "greenBubble": "Green",
+                "blueBubble": "Blue",
+                "blackBubble": "Black",
+                "default" : "Default"
               });
             }, 1000);
           });
@@ -188,14 +189,15 @@ class App extends Component {
         <div className="mainGrid">
           <div className="chatDisplay">
             {this.state.messages.map(message => {
+              console.log('message array', message);
               return (
-                <div className="userText" key={message.key}>
+                <div className="default" key={message.key}>
                   <img
                     src={message.message.userImg}
                     alt={message.message.userName}
                   />
                   <button
-                    className="cross"
+                    className="trash"
                     onClick={() => {
                       this.remove(message.key);
                     }}

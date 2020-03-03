@@ -1,42 +1,31 @@
 // a couple of functions from the React library
 import React, { Component } from "react";
-// import { Howl, Howler } from "howler";
 
-// // import audio clip
-// import click from './../audioClips/soundsofawesome_click.wav';
-
-// const audioClips = {
-//         sound: click, 
-//         label: 'clickSound'};
 
 class MessageInputForm extends Component {
     constructor(){
         super();
         this.state={
-            userInput:""
+            userInput:"",
+            // play: false
         }
     };
 
-    // soundPlay = (src) => {
-    //     const sound = new Howl({
-    //         src: ['soundsofawesome_click.wav']
+    // audio = new Audio(this.props.url)
+
+    // componentDidMount() {
+    //     this.audio.addEventListener('ended', () => this.setState({play: false}));
+    // }
+
+    // componentWillUnmount() {
+    //     this.audio.removeEventListener('ended', () => this.setState({play: false}));
+    // }
+
+    // togglePlay = () => {
+    //     this.setState({play: !this.audio.play}, () => {
+    //         this.state.play ? this.audio.play() : this.audio.pause();
     //     });
-    //     sound.play();
     // }
-        
-    // renderButtonAndSound = () => {
-    //     return audioClips => {
-    //         return (
-    //             <button 
-    //                 className="submitButton" 
-    //                 onClick={()=> this.soundPlay(sound)}>
-    //                 <i className="fas fa-paper-plane"></i>
-    //             </button>
-    //         )
-    //     }
-    // }
-
-
 
     handleChange = e => {
         this.setState({
@@ -55,7 +44,6 @@ class MessageInputForm extends Component {
 
 
     render() {
-        // Howler.volume(1.0)
         return (
 
         <div className="messageInput">
@@ -71,12 +59,13 @@ class MessageInputForm extends Component {
                 value={this.state.userInput} // good for accessibility and screen readers, this will track the changes even if they leave and come back
             />
 
-            {/* {this.renderButtonAndSound()} */}
             
             <button 
                 className="submitButton"
                 type="submit" 
-            > 
+                // onClick={this.togglePlay}
+            >
+                    {/* {this.state.play ? 'Pause' : 'Play'}  */}
             <i className="fas fa-paper-plane"></i> 
             </button> 
             </form>
