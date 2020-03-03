@@ -8,7 +8,7 @@ const instructionButton = props => {
             <button onClick={props.click} className="instrIcon">
             <i className="fas fa-question-circle"></i>
             </button>
-            <h3>← Click Me!</h3>
+            <h3>← Click Me To Start!</h3>
         </div>
     );
 }

@@ -16,10 +16,11 @@ header {
     button{ 
         float: right;
         position: relative;
-        top: -30%;
+        top: -100%;
         color: white;
-        @include fluid-type (2.5rem, 4rem, 360px, 1280px);
+        @include fluid-type (1.8rem, 2.5rem, 360px, 1280px);
         text-shadow: 3px 3px 3px $blackColor;
+        width: 100px;
     }
 }
 
@@ -34,7 +35,7 @@ header {
     h3 {
         margin-left: 6%;
         margin-top: 1%;
-        width: 150px;
+        width: 200px;
     }
 }
 
