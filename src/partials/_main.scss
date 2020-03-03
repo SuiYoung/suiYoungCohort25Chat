@@ -40,7 +40,9 @@ header {
 }
 
 .blueFont {
-    color: rgb(0, 102, 255);
+    color: rgb(0, 101, 253);
+    text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white;
+    font-weight: bold;
 }
 
 .instrIcon {

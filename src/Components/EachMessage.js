@@ -5,7 +5,6 @@ import React from "react";
 import firebase from "./../firebase";
 
 const EachMessage = ({msgProp, bubbleColor}) => {
-    // console.log(msgProp);
 
     // 🧠 function to remove messages
     let remove = key => {
@@ -16,28 +15,26 @@ const EachMessage = ({msgProp, bubbleColor}) => {
     };
 
     let colorChoice = msgProp.message.userColor;
-    // console.log(colorChoice)
 
-    
         return (
-          <div className={colorChoice} key={msgProp.key}>
-            {/* Github Avatar for each user */}
-            <img src={msgProp.message.userImg} alt={msgProp.message.userName} />
-            {/* button to delete messages */}
-            <button
-              className="trash"
-              onClick={() => {
-                remove(msgProp.message.key);
-              }}
-            >
-              <i className="fas fa-trash-alt"></i>
-            </button>{" "}
-            {/* user name and message */}
-            <p>
-              <span className="blueFont">{msgProp.message.userName}</span>:{" "}
-              {msgProp.message.userInput}
-            </p>
-          </div>
+            <div className={colorChoice} key={msgProp.key}>
+                {/* Github Avatar for each user */}
+                <img src={msgProp.message.userImg} alt={msgProp.message.userName} />
+                {/* button to delete messages */}
+                <button
+                className="trash"
+                onClick={() => {
+                    remove(msgProp.message.key);
+                }}
+                >
+                <i className="fas fa-trash-alt"></i>
+                </button>{" "}
+                {/* user name and message */}
+                <p>
+                <span className="blueFont">{msgProp.message.userName} {" "}:{" "}</span>
+                {msgProp.message.userInput}
+                </p>
+            </div>
         );
 
 };

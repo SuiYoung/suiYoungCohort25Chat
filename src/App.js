@@ -87,9 +87,10 @@ class App extends Component {
           const inputOptions = new Promise(resolve => {
             setTimeout(() => {
               resolve({
-                redBubble: "Red",
-                greenBubble: "Green",
-                blueBubble: "Blue",
+                redBubble: "nickRed",
+                yellowBubble: "Yellow",
+                tealBubble: "Teal",
+                olgaBubble: "olgaPurple",
                 blackBubble: "Black",
                 default: "Default"
               });
@@ -188,8 +189,7 @@ class App extends Component {
               console.log("message array", message);
               return (
                 // Div containers for each message.
-                <EachMessage msgProp = {message} bubbleColor={this.state.userColor}/>
-
+                <EachMessage msgProp = {message}/>
               );
             })}
           </div>
