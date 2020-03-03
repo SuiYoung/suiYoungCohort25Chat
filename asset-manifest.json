@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/suiYoungCohort25Chat/static/css/main.f9c5ca87.chunk.css",
-    "main.js": "/suiYoungCohort25Chat/static/js/main.67e527d0.chunk.js",
-    "main.js.map": "/suiYoungCohort25Chat/static/js/main.67e527d0.chunk.js.map",
+    "main.css": "/suiYoungCohort25Chat/static/css/main.fb1c7fd3.chunk.css",
+    "main.js": "/suiYoungCohort25Chat/static/js/main.a47c9e93.chunk.js",
+    "main.js.map": "/suiYoungCohort25Chat/static/js/main.a47c9e93.chunk.js.map",
     "runtime-main.js": "/suiYoungCohort25Chat/static/js/runtime-main.c8c72320.js",
     "runtime-main.js.map": "/suiYoungCohort25Chat/static/js/runtime-main.c8c72320.js.map",
     "static/js/2.b7519d2a.chunk.js": "/suiYoungCohort25Chat/static/js/2.b7519d2a.chunk.js",
     "static/js/2.b7519d2a.chunk.js.map": "/suiYoungCohort25Chat/static/js/2.b7519d2a.chunk.js.map",
     "index.html": "/suiYoungCohort25Chat/index.html",
-    "precache-manifest.958d64744613b4e273331d4e2e49abb3.js": "/suiYoungCohort25Chat/precache-manifest.958d64744613b4e273331d4e2e49abb3.js",
+    "precache-manifest.0a1dd9dca4ffe582e303053d211b8aa2.js": "/suiYoungCohort25Chat/precache-manifest.0a1dd9dca4ffe582e303053d211b8aa2.js",
     "service-worker.js": "/suiYoungCohort25Chat/service-worker.js",
-    "static/css/main.f9c5ca87.chunk.css.map": "/suiYoungCohort25Chat/static/css/main.f9c5ca87.chunk.css.map",
+    "static/css/main.fb1c7fd3.chunk.css.map": "/suiYoungCohort25Chat/static/css/main.fb1c7fd3.chunk.css.map",
     "static/js/2.b7519d2a.chunk.js.LICENSE.txt": "/suiYoungCohort25Chat/static/js/2.b7519d2a.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/suiYoungCohort25Chat/static/media/boris-misevic-cQltbypBFvg-unsplash.44735fd9.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.c8c72320.js",
     "static/js/2.b7519d2a.chunk.js",
-    "static/css/main.f9c5ca87.chunk.css",
-    "static/js/main.67e527d0.chunk.js"
+    "static/css/main.fb1c7fd3.chunk.css",
+    "static/js/main.a47c9e93.chunk.js"
   ]
 }
