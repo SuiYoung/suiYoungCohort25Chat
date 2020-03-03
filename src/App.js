@@ -7,6 +7,7 @@ import Header from "./Components/Header";
 import InstructionButton from "./Components/InstructionButton";
 import MessageInputForm from "./Components/MessageInputForm";
 import Aside from "./Components/Aside";
+import EachMessage from "./Components/EachMessage";
 
 // import firebase
 import firebase from "./firebase";
@@ -42,7 +43,7 @@ class App extends Component {
     // create a variable that holds a reference to  database
     const dbRef = firebase.database().ref();
 
-    // create a variable that holds a reference to the user's name.
+    // 🧠 create a variable that holds a reference to the user's name.
     let userName;
 
     Swal.fire({
@@ -79,18 +80,18 @@ class App extends Component {
         });
         console.log(this.state.userImg);
 
-        // user select their color:
+        // 🧠 user select their color, once selected userColor in state pushed to message array and used to change only their message bubble:
 
         (async () => {
           /* inputOptions can be an object or Promise */
           const inputOptions = new Promise(resolve => {
             setTimeout(() => {
               resolve({
-                "redBubble": "Red",
-                "greenBubble": "Green",
-                "blueBubble": "Blue",
-                "blackBubble": "Black",
-                "default" : "Default"
+                redBubble: "Red",
+                greenBubble: "Green",
+                blueBubble: "Blue",
+                blackBubble: "Black",
+                default: "Default"
               });
             }, 1000);
           });
@@ -110,11 +111,10 @@ class App extends Component {
             Swal.fire({ html: `You selected: ${color}` });
           }
           this.setState({
-            userColor: color,
-          })
+            userColor: color
+          });
           console.log(this.state.userColor);
         })();
-  
       }
       userName = result.value.login;
 
@@ -123,7 +123,7 @@ class App extends Component {
       });
     });
 
-    // event listener that takes a callback function used to get data from the database and call it response.
+    // 🧠 event listener that takes a callback function used to get data from the database and call it response.
     dbRef.on("value", response => {
       const dataFromDb = response.val();
       // see the information and parse the way we want it.
@@ -140,7 +140,7 @@ class App extends Component {
         };
         newState.push(messageInfo);
       }
-      console.log('newState Array:', newState);
+      console.log("newState Array:", newState);
       // call this.setState to update the component state using the local array newState.
       this.setState({
         messages: newState,
@@ -149,7 +149,7 @@ class App extends Component {
     });
   }
 
-  // on submit, push user input into firebase
+  // 🧠 on submit, push user input into firebase
   handleFormSubmit = userInput => {
     const dbRef = firebase.database().ref();
     dbRef.push({
@@ -159,10 +159,9 @@ class App extends Component {
       userColor: this.state.userColor
     });
   };
-  1;
 
+  // 🧠 function to remove messages
   remove = key => {
-    // event.preventDefault();
     const dbRef = firebase.database().ref();
     console.log("dbRef", dbRef.child(key));
     console.log("key", key);
@@ -180,38 +179,29 @@ class App extends Component {
     return (
       <div className="App">
         <Helmet />
+
+        {/* toggle function adding class to aside drawer passesd into button component  */}
         <InstructionButton click={this.asideToggleClickHandler} />
+
         <header>
           <Header />
         </header>
+
+        {/* the aside drawer */}
         {asideDrawer}
 
         <div className="mainGrid">
           <div className="chatDisplay">
             {this.state.messages.map(message => {
-              console.log('message array', message);
+              console.log("message array", message);
               return (
-                <div className="default" key={message.key}>
-                  <img
-                    src={message.message.userImg}
-                    alt={message.message.userName}
-                  />
-                  <button
-                    className="trash"
-                    onClick={() => {
-                      this.remove(message.key);
-                    }}
-                  >
-                    <i className="fas fa-trash-alt"></i>
-                  </button>{" "}
-                  <p>
-                    <span className="blueFont">{message.message.userName}</span>
-                    : {message.message.userInput}
-                  </p>
-                </div>
+                // Div containers for each message.
+                <EachMessage msgProp = {message}/>
               );
             })}
           </div>
+
+          {/* input field for user to type their message, passing function into component */}
           <MessageInputForm handleFormSubmit={this.handleFormSubmit} />
         </div>
       </div>
