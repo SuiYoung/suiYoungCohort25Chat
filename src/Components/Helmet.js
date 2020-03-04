@@ -10,7 +10,8 @@ class Application extends React.Component {
                     <title>Cohort 25 Chat</title>
                     {/* insert fontawesome kit */}
                     <script src="https://kit.fontawesome.com/dfdc9c622d.js" crossorigin="anonymous"></script>
-                
+
+                    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet"/>
                     
                 </Helmet>
                 ...
