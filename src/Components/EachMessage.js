@@ -8,8 +8,6 @@ const EachMessage = ({msgProp}) => {
     // 🧠 function to remove messages
     let remove = key => {
         const dbRef = firebase.database().ref();
-        console.log("dbRef", dbRef.child(msgProp.key));
-        console.log("key", msgProp.key);
         dbRef.child(msgProp.key).remove();
     };
 

@@ -79,7 +79,6 @@ class App extends Component {
           this.setState({
             userImg: result.value.avatar_url
           });
-          // console.log(this.state.userImg);
 
           // 🧠 user select their color, once selected userColor in state pushed to message array and used to change only their message bubble:
 
@@ -131,7 +130,6 @@ class App extends Component {
     dbRef.on("value", response => {
       const dataFromDb = response.val();
       // see the information and parse the way we want it.
-      // console.log("dataFromDb", dataFromDb);
 
       // create a variable to store the new state.
       const newState = [];
@@ -144,7 +142,6 @@ class App extends Component {
         };
         newState.push(messageInfo);
       }
-      // console.log("newState Array:", newState);
       // call this.setState to update the component state using the local array newState.
       this.setState({
         messages: newState,
@@ -156,7 +153,6 @@ class App extends Component {
   scrollToBottom = () => {
     const chatDiv = document.querySelector(".chatDisplay");
     chatDiv.scrollTop = chatDiv.scrollHeight;
-    console.log(chatDiv)
   };
 
 
@@ -207,7 +203,6 @@ class App extends Component {
         <div className="mainGrid">
           <div className="chatDisplay">
             {this.state.messages.map(message => (
-              // console.log("message array", message);
                 // Div containers for each message.
                 <EachMessage msgProp={message} />
               ))}
