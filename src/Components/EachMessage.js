@@ -4,8 +4,7 @@ import React from "react";
 // import firebase
 import firebase from "./../firebase";
 
-const EachMessage = ({msgProp, bubbleColor}) => {
-
+const EachMessage = ({msgProp}) => {
     // 🧠 function to remove messages
     let remove = key => {
         const dbRef = firebase.database().ref();

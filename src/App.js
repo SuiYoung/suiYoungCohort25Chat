@@ -69,60 +69,63 @@ class App extends Component {
           });
       },
       allowOutsideClick: false
-    }).then(result => {
-      if (result.value) {
-        Swal.fire({
-          title: `Here is ${result.value.login}'s avatar!`,
-          imageUrl: result.value.avatar_url
-        });
-        this.setState({
-          userImg: result.value.avatar_url
-        });
-        // console.log(this.state.userImg);
-
-        // 🧠 user select their color, once selected userColor in state pushed to message array and used to change only their message bubble:
-
-        (async () => {
-          /* inputOptions can be an object or Promise */
-          const inputOptions = new Promise(resolve => {
-            setTimeout(() => {
-              resolve({
-                redBubble: "nickRed",
-                yellowBubble: "Yellow",
-                tealBubble: "Teal",
-                olgaBubble: "olgaPurple",
-                blackBubble: "Black",
-                default: "Default"
-              });
-            }, 1000);
+    })
+      .then(result => {
+        if (result.value) {
+          Swal.fire({
+            title: `Here is ${result.value.login}'s avatar!`,
+            imageUrl: result.value.avatar_url
           });
-
-          const { value: color } = await Swal.fire({
-            title: "Select color",
-            input: "radio",
-            inputOptions: inputOptions,
-            inputValidator: value => {
-              if (!value) {
-                return "You need to choose something!";
-              }
-            }
-          });
-
-          if (color) {
-            Swal.fire({ html: `You selected: ${color}` });
-          }
           this.setState({
-            userColor: color
+            userImg: result.value.avatar_url
           });
-          console.log(this.state.userColor);
-        })();
-      }
-      userName = result.value.login;
+          // console.log(this.state.userImg);
 
-      this.setState({
-        userName: userName
+          // 🧠 user select their color, once selected userColor in state pushed to message array and used to change only their message bubble:
+
+          (async () => {
+            /* inputOptions can be an object or Promise */
+            const inputOptions = new Promise(resolve => {
+              setTimeout(() => {
+                resolve({
+                  redBubble: "nickRed",
+                  yellowBubble: "Yellow",
+                  tealBubble: "Teal",
+                  olgaBubble: "olgaPurple",
+                  blackBubble: "Black",
+                  default: "Default"
+                });
+              }, 1000);
+            });
+
+            const { value: color } = await Swal.fire({
+              title: "Select color",
+              input: "radio",
+              inputOptions: inputOptions,
+              inputValidator: value => {
+                if (!value) {
+                  return "You need to choose something!";
+                }
+              }
+            });
+
+            if (color) {
+              Swal.fire({ html: `You selected: ${color}` });
+            }
+            this.setState({
+              userColor: color
+            });
+          })();
+        }
+        userName = result.value.login;
+
+        this.setState({
+          userName: userName
+        });
+      })
+      .then(() => {
+        this.scrollToBottom();
       });
-    });
 
     // 🧠 event listener that takes a callback function used to get data from the database and call it response.
     dbRef.on("value", response => {
@@ -150,19 +153,37 @@ class App extends Component {
     });
   }
 
+  scrollToBottom = () => {
+    const chatDiv = document.querySelector(".chatDisplay");
+    chatDiv.scrollTop = chatDiv.scrollHeight;
+    console.log(chatDiv)
+  };
+
+
+  handleChange = e => {
+    this.setState({
+      userInput: e.target.value
+    });
+  };
+
   // 🧠 on submit, push user input into firebase
-  handleFormSubmit = userInput => {
+  handleFormSubmit = e => {
+    e.preventDefault();
     const dbRef = firebase.database().ref();
     dbRef.push({
-      userInput,
+      userInput: this.state.userInput,
       userName: this.state.userName,
       userImg: this.state.userImg,
       userColor: this.state.userColor
     });
+    // return input to empty.
+    // eslint-disable-next-line
+    this.state.userInput = "";
   };
 
   render() {
     // if statement for the aside state of being open or closed.
+
     let asideDrawer;
 
     if (this.state.asideOpen) {
@@ -185,17 +206,15 @@ class App extends Component {
 
         <div className="mainGrid">
           <div className="chatDisplay">
-            {this.state.messages.map(message => {
-              console.log("message array", message);
-              return (
+            {this.state.messages.map(message => (
+              // console.log("message array", message);
                 // Div containers for each message.
-                <EachMessage msgProp = {message}/>
-              );
-            })}
+                <EachMessage msgProp={message} />
+              ))}
           </div>
 
           {/* input field for user to type their message, passing function into component */}
-          <MessageInputForm handleFormSubmit={this.handleFormSubmit} />
+          <MessageInputForm handleFormSubmit={this.handleFormSubmit} handleChange={this.handleChange} userInputProp={this.state.userInput}/>
         </div>
       </div>
     );
